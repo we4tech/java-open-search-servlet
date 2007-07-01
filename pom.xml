@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.we4tech.openSearch</groupId>
+  <artifactId>open-search-parent</artifactId>
+  <packaging>pom</packaging>
+  <version>1.0</version>
+  <name>Open search integration</name>
+
+  <modules>
+    <module>open-search</module>
+    <module>open-search-webapp</module>
+  </modules>
+
+  <!-- somewhere in repository -->
+  <repositories>
+    <repository>
+      <id>somewherein</id>
+      <url>http://maven.somewherein.net</url>
+    </repository>
+  </repositories>
+
+  <dependencies>
+    <dependency>
+      <artifactId>log4j</artifactId>
+      <groupId>log4j</groupId>
+      <version>1.2.9</version>
+    </dependency>
+    <dependency>
+      <artifactId>jmock</artifactId>
+      <groupId>jmock</groupId>
+      <version>1.1.0</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>servletapi</groupId>
+      <artifactId>servlet-api</artifactId>
+      <version>2.4</version>
+      <scope>provided</scope>
+    </dependency>
+  </dependencies>
+
+
+  <!-- Enable JDK 1.5 supports -->
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>2.0</version>
+        <configuration>
+          <source>1.5</source>
+          <target>1.5</target>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+  <!-- Contious integration servier configuration -->
+  <ciManagement>
+    <system>continuum</system>
+    <notifiers>
+      <notifier>
+        <type>mail</type>
+        <configuration>
+          <address>hasan@somewherein.net</address>
+        </configuration>
+      </notifier>
+    </notifiers>
+  </ciManagement>
+
+  <scm>
+    <connection>
+      scm:svn:svn://somewhereindhaka.net/os/open-search/trunk/
+    </connection>
+    <developerConnection>
+      scm:svn:svn://somewhereindhaka.net/os/open-search/trunk/
+    </developerConnection>
+    <tag>HEAD</tag>
+    <url>svn://somewhereindhaka.net/os/open-search/trunk/</url>
+  </scm>
+
+</project>

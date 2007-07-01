@@ -1,0 +1,33 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+
+  <servlet>
+    <servlet-name>openSearch</servlet-name>
+    <servlet-class>com.we4tech.openSearch.servlet.OpenSearchServlet</servlet-class>
+    <!-- URL matching pattern -->
+    <init-param>
+      <param-name>url-match</param-name>
+      <param-value>.*/(.+).osd</param-value>
+      <!--<param-value>.*/search/(.+)</param-value>-->
+    </init-param>
+    <!-- map open search configuration with url -->
+    <init-param>
+      <param-name>open-search</param-name>
+      <param-value>open-search.properties</param-value>
+    </init-param>
+    <init-param>
+      <param-name>somewherein-blog</param-name>
+      <param-value>somewherein-blog.properties</param-value>
+    </init-param>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>openSearch</servlet-name>
+    <!--<url-pattern>/search/*</url-pattern>-->
+    <url-pattern>*.osd</url-pattern>
+  </servlet-mapping>
+</web-app>
