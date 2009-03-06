@@ -33,6 +33,7 @@ public interface OpenSearchService {
   /**
    * Render open search formatted xml content based on specified configuration
    * path.
+   *
    * @return {@code String} open search formatted xml.
    * @param pOpenSearchConfigurationPath configuration file location.
    */
